@@ -2,10 +2,13 @@ package handlers
 
 import (
 	"github.com/gorilla/mux"
+	"github.com/serhiy-v/restapi/models"
 )
 
+var Projects []models.Project
 
 func NewRouter() *mux.Router {
+	Projects = append(Projects, models.Project{ID: "1",Name: "prj", Description: "simply prj"})
 	r := mux.NewRouter()
     //Project Route
 	r.HandleFunc("/projects",GetProjects).Methods("GET")

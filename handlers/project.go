@@ -28,6 +28,9 @@ func GetProject(w http.ResponseWriter, r *http.Request)  {
 		log.Fatal(err)
 	}
 	res,err := db.Project(id)
+	if err != nil {
+		log.Fatal(err)
+	}
 	json.NewEncoder(w).Encode(res)
 
 }

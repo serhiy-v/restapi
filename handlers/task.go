@@ -17,6 +17,9 @@ func ShowTask(w http.ResponseWriter, r *http.Request)  {
 		log.Fatal(err)
 	}
 	res,err := db.ShowTask(id)
+	if err != nil {
+		log.Fatal(err)
+	}
 	json.NewEncoder(w).Encode(res)
 }
 

@@ -9,7 +9,7 @@ var db *sql.DB
 
 func Connect() error {
 	var err error
-	db, err = sql.Open("postgres","user=postgres password=root dbname=restapi sslmode=disable")
+	db, err = sql.Open("postgres","user=postgres password=root dbname=rest sslmode=disable")
 	if err != nil {
 		return err
 	}
